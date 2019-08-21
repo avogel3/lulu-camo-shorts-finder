@@ -3,17 +3,17 @@ require 'json'
 
 class CamoShortFinder
   def find_camo_shorts
-    camo_shorts
     report
+    camo_shorts
   end
 
   private
   def camo_shorts
-    short_styles.select { |s| s["color-name"].downcase.include?('camo') }
+    @camo_shorts ||= short_styles.select { |s| s["color-name"].downcase.include?('camo') }
   end
 
   def uniq_styles
-    short_styles.map { |s| s["color-name"] }.uniq
+    @uniq_styles ||= short_styles.map { |s| s["color-name"] }.uniq
   end
 
   def report
@@ -47,4 +47,4 @@ class CamoShortFinder
   end
 end
 
-require 'pry'; binding.pry;
+CamoShortFinder.new.find_camo_shorts
