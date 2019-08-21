@@ -12,10 +12,6 @@ class CamoShortFinder
     @camo_shorts ||= short_styles.select { |s| s["color-name"].downcase.include?('camo') }
   end
 
-  def uniq_styles
-    @uniq_styles ||= short_styles.map { |s| s["color-name"] }.uniq
-  end
-
   def report
     puts "Total number of short styles - #{short_styles.count}"
     puts "-----------------------------------------------------------"
