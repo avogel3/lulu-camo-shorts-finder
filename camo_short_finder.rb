@@ -19,9 +19,10 @@ class CamoShortFinder
   def report
     puts "Total number of short styles - #{short_styles.count}"
     puts "-----------------------------------------------------------"
-    puts "Total number of *UNIQ* short styles - #{uniq_styles.count}"
     puts "Total number of *CAMO* short styles - #{camo_shorts.count}"
     puts "-----------------------------------------------------------"
+    puts "CAMO short styles -"
+    camo_shorts.map { |style| puts "\t • #{style['name']}" }
   end
 
   def short_styles
