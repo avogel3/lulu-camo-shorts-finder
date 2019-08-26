@@ -19,6 +19,8 @@ class CamoShortFinder
     puts "-----------------------------------------------------------"
     puts "CAMO short styles -"
     camo_shorts.map { |style| puts "\t • #{style['name']}" }
+    puts "-----------------------------------------------------------"
+    puts camo_shorts
   end
 
   def short_styles
